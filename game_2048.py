@@ -47,19 +47,12 @@ class Game2048:
             [0,0,0,0],
             [0,0,0,0],
         ]
-
-        self.tiles = [
-            [2,4,8,16],
-            [32,64,128,256],
-            [512,1024,2048,0],
-            [0,0,0,0],
-        ]
-
+        
         self._generateNewTile()
         self._generateNewTile()
 
     def _shift(self, direction):
-        if(not self._isMovePossible(direction)):
+        if(not self._isMovePossible(direction) or self.isLoss() or self.isWin()):
             return
         traversal = self._generateTraversal(direction)
         for row, col in traversal:
