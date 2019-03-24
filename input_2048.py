@@ -1,6 +1,6 @@
 import curses
 
-class InputManager:
+class Input2048:
     def __init__(self, stdscr):
         self.stdscr = stdscr
 
@@ -9,11 +9,11 @@ class InputManager:
 
     def HandleInput(self, key, board):
         if key == curses.KEY_UP:
-            board.up()
+            board.shiftUp()
         elif key == curses.KEY_DOWN:
-            board.down()
+            board.shiftDown()
         elif key == curses.KEY_LEFT:
-            board.left()
+            board.shiftLeft()
         elif key == curses.KEY_RIGHT:
-            board.right()
+            board.shiftRight()
         return

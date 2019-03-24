@@ -1,6 +1,6 @@
-
+#wont need this at all once I change how I render things
 EMPTY_ROW = list(' '*12)
-class PIECES:
+class TILES:
     _blank = [
         EMPTY_ROW,
         EMPTY_ROW,
