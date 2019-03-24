@@ -16,5 +16,4 @@ class InputManager:
             board.left()
         elif key == curses.KEY_RIGHT:
             board.right()
-        self.stdscr.refresh()
         return

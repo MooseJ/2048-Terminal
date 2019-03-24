@@ -10,31 +10,35 @@ def main(stdscr):
     while True:
         c = inputManager.GetInput()
 
-
         inputManager.HandleInput(c, board)
         clearScreen(stdscr)
-        board.betterDisplay(stdscr)
-        board.displayBoard(stdscr)
+        #board.debugDisplay(stdscr)
+        board.display(stdscr)
+        stdscr.refresh()
+        #board.debugDisplay(stdscr)
 
         if c == ord('q'):
             break  # Exit the while loop
-        else:
-            clearScreen(stdscr)
-            board.betterDisplay(stdscr)
-            board.displayBoard(stdscr)
-        stdscr.refresh()
+        # else:
+        #     clearScreen(stdscr)q
+        #     board.debugDisplay(stdscr)
+        #     board.display(stdscr)
 
     unInitCurses(stdscr)
 
 def initCurses(stdscr):
     curses.noecho() #lets you see the keys you input??
-    #curses.init_pair(0, curses.COLOR_WHITE, curses.COLOR_MAGENTA)
-    curses.init_pair(1, curses.COLOR_WHITE, curses.COLOR_WHITE)
-    curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_YELLOW)
-    curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_RED)
-    curses.init_pair(4, curses.COLOR_WHITE, curses.COLOR_GREEN)
-    curses.init_pair(5, curses.COLOR_WHITE, curses.COLOR_CYAN)
-    curses.init_pair(6, curses.COLOR_WHITE, curses.COLOR_MAGENTA)
+    curses.init_pair(1, curses.COLOR_BLACK, 251)
+    curses.init_pair(2, curses.COLOR_BLACK, 255)
+    curses.init_pair(3, curses.COLOR_BLACK, 228)
+    curses.init_pair(4, curses.COLOR_BLACK, 221)
+    curses.init_pair(5, curses.COLOR_BLACK, 215)
+    curses.init_pair(6, curses.COLOR_BLACK, 209)
+    curses.init_pair(7, curses.COLOR_BLACK, 196)
+    curses.init_pair(8, curses.COLOR_BLACK, 160)
+    curses.init_pair(9, curses.COLOR_BLACK, 227)
+    curses.init_pair(10, curses.COLOR_BLACK, 220)
+    curses.init_pair(11, curses.COLOR_BLACK, 214)
     curses.cbreak() #allows app to react to keys instantly without waiting for enter
     stdscr.keypad(True)
 
