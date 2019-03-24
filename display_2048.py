@@ -103,7 +103,7 @@ class Display2048:
 
     def _drawTitle(self, stdscr):
         for index, line in enumerate(_titleText.splitlines()):
-            stdscr.addstr(1+index, 25, line)
+            stdscr.addstr(1+index, 22, line)
 
     # really need to make this cleaner
     def _drawBoard(self, game2048, stdscr):
