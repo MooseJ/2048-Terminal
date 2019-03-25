@@ -9,13 +9,12 @@ def main(stdscr):
     input2048 = Input2048(stdscr)
     game2048 = Game2048()
     display2048 = Display2048()
-    
+
     while True:
         stdscr.clear()
         display2048.display(stdscr, game2048)
         keyPressed = input2048.GetInput()
         input2048.HandleInput(keyPressed, game2048)
-        stdscr.refresh()
 
         if keyPressed == ord('q'):
             break

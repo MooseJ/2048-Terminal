@@ -73,7 +73,15 @@ class Display2048:
         self._board_start_y = 8
         self._board_start_x = 8
 
-    def display(self, stdscr, game2048: Game2048):
+    def display(self, stdscr, game2048):
+        #check if terminal is big enough to draw the game
+        #without this, and exception would be thrown when trying to draw on a screen thats too small
+        height,width = stdscr.getmaxyx()
+        if(width < 110 or height < 40):
+            stdscr.addstr(0, 0, "Terminal must have width of at least 110 and height of 40")
+            stdscr.addstr(1, 0, "Current height: " + str(height))
+            stdscr.addstr(2, 0, "Current width: " + str(width))
+            return
         self._drawTitle(stdscr)
         self._drawBoard(game2048, stdscr)
         self._drawInstructions(stdscr)
